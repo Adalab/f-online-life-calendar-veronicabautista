@@ -1,37 +1,63 @@
 import React, { Component } from 'react';
 import './App.css';
+import NewDay from './components/NewDay';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state ={
+      faces: [],
+      date: "",
+      status: "",
+      mesagge: "",
+    }
+
+    this.submitDay = this.submitDay.bind(this);
+    this.addDate = this.addDate.bind(this);
+    this.addFace = this.addFace.bind(this);
+    this.addMessage = this.addMessage.bind(this);
+  }
+
+  submitDay(e) {
+    e.preventDefault();
+    const newDay = this.state.faces;
+    newDay.push(this.state.status)
+    this.setState({ face: newDay })
+  }
+
+  addDate(e) {
+    this.setState({ date: e.target.value })
+  }
+
+  addFace(e) {
+    this.setState({ status: e.target.value })
+  }
+
+  addMessage(e) {
+    this.setState({ message: e.target.value })
+  }
+
+  cancelButton() {
+    this.setState({
+      date: "",
+      status: "",
+      message: "",
+    })
+  }
+
   render() {
     return (
       <div className>
         <header className="plus__button">
-          <button> + </button>
+          <span> + </span>
         </header>
-        <form className="form__container">
-          <div className="date__container">
-            <label name="date">Fecha</label>
-            <input type="date" name="date" required />
-          </div>
-          <div className="status__container">
-            <label name="status">Estado</label>
-              <label for="smile" name="happy">
-                <input type="checkbox" name="happy" required /> :)
-              </label>
-              <label for="smile" name="sad">
-                <input type="checkbox" name="sad" required /> :(
-              </label>
-          </div> 
-          <div className="message">
-            <label for="message" name="mesagge">Mensaje
-              <input type="text" name="happy" placeholder="¿Por qué es un buen día?" />
-            </label>
-          </div>
-          <div className="buttons__container">
-            <button type="submit" className="save__button">GUARDAR</button>
-            <button className="cancel__button">CANCELAR</button>      
-          </div>
-        </form>
+        <NewDay 
+        submitDay={this.submitDay}
+        addDate={this.addDate}
+        addFace={this.addFace}
+        addMessage={this.addMessage}
+        />
       </div>
     );
   }
