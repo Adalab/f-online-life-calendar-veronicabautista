@@ -11,3 +11,26 @@
   font-weight: bold;
   padding: 10px;
 }
+
+.happy__smile {
+  color: black;
+  background-color: lightyellow;
+  font-size: 30px;
+  height: 40px;
+  width: 40px;
+  border-radius: 30px;
+}
+
+.sad__smile {
+  color: black;
+  background-color: lightcoral;
+  font-size: 30px;
+  height: 40px;
+  width: 40px;
+  border-radius: 30px;
+}
+
+
+.hide__message {
+  display: none
+}

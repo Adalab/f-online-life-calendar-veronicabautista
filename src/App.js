@@ -56,6 +56,7 @@ class App extends Component {
         status={this.state.status}
         />
         <NewDay 
+        status={this.state.status}
         submitDay={this.submitDay}
         addDate={this.addDate}
         addFace={this.addFace}

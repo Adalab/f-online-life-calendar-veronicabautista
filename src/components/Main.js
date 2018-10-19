@@ -8,11 +8,11 @@ class Main extends Component {
 			<header className="plus__button">
 				<span> + </span>
 			</header>
-			<ul className="smiles__container">
+			<ul className="smileys__container">
 				{this.props.faces.map((face, i) => {
 					 let smileys = face === ':)' ? 'happy__smile' : 'sad__smile'
 					 return (
-					<li key={i} className={`smiles ${smileys}`}>
+					<li key={i} className={smileys}>
 					{face}
 					</li>
 				);
