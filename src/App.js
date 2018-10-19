@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Main from './components/Main';
 import NewDay from './components/NewDay';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
     this.addDate = this.addDate.bind(this);
     this.addFace = this.addFace.bind(this);
     this.addMessage = this.addMessage.bind(this);
+    this.cancelButton = this.cancelButton.bind(this);
   }
 
   submitDay(e) {
@@ -48,15 +50,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className>
-        <header className="plus__button">
-          <span> + </span>
-        </header>
+      <div className="page__container">
+        <Main 
+        faces={this.state.faces}
+        status={this.state.status}
+        />
         <NewDay 
         submitDay={this.submitDay}
         addDate={this.addDate}
         addFace={this.addFace}
         addMessage={this.addMessage}
+        cancelButton={this.cancelButton}
         />
       </div>
     );

@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 
 class NewDay extends Component {
 	render() {
-		const { submitDay, addDate, addFace, addMessage} = this.props;
+		const { status, submitDay, addDate, addFace, addMessage, cancelButton} = this.props;
 	
+		let hideMessage = status === ':)' ? null : "hide__message" ;
+
 		return (
 		<form className="form__container" onSubmit={submitDay}>
 		<div className="date__container">
@@ -12,21 +14,21 @@ class NewDay extends Component {
 		</div>
 		<div className="status__container">
 			<label name="status">Estado</label>
-				<label for="smile" name="happy">
+				<label name="happy">
 					<input type="checkbox" name="happy" onChange={addFace} /> :)
 				</label>
-				<label for="smile" name="sad">
+				<label name="sad">
 					<input type="checkbox" name="sad" onChange={addFace} /> :(
 				</label>
 		</div> 
-		<div className="message">
-			<label for="message" name="mesagge" onChange={addMessage}>Mensaje
+		<div className={hideMessage}>
+			<label name="mesagge" onChange={addMessage}>Mensaje
 				<input type="text" name="happy" placeholder="¿Por qué es un buen día?" />
 			</label>
 		</div>
 		<div className="buttons__container">
 			<button type="submit" className="save__button">GUARDAR</button>
-			<button className="cancel__button">CANCELAR</button>      
+			<button className="cancel__button" onClick={cancelButton}>CANCELAR</button>      
 		</div>
 		</form>
 		);
