@@ -2,7 +2,6 @@
   margin: 0px;
   padding: 0px;
 }
-
 .plus__button {
   background-color: blue;
   color: white;
@@ -11,26 +10,19 @@
   font-weight: bold;
   padding: 10px;
 }
-
+.face {
+  color: black;
+  font-size: 30px;
+  height: 40px;
+  width: 40px;
+  border-radius: 30px;
+}
 .happy__smile {
-  color: black;
-  background-color: lightyellow;
-  font-size: 30px;
-  height: 40px;
-  width: 40px;
-  border-radius: 30px;
+  background-color: yellow;
 }
-
 .sad__smile {
-  color: black;
-  background-color: lightcoral;
-  font-size: 30px;
-  height: 40px;
-  width: 40px;
-  border-radius: 30px;
+  background-color: red;
 }
-
-
 .hide__message {
   display: none
 }

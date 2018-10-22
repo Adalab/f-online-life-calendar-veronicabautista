@@ -9,35 +9,47 @@ class App extends Component {
 
     this.state ={
       faces: [],
-      date: "",
-      status: "",
-      mesagge: "",
+      date: null,
+      status: null,
+      mesagge: null,
     }
+    console.log(this.state.faces);
 
     this.submitDay = this.submitDay.bind(this);
     this.addDate = this.addDate.bind(this);
     this.addFace = this.addFace.bind(this);
-    this.addMessage = this.addMessage.bind(this);
     this.cancelButton = this.cancelButton.bind(this);
   }
 
-  submitDay(e) {
-    e.preventDefault();
-    const newDay = this.state.faces;
-    newDay.push(this.state.status)
-    this.setState({ face: newDay })
-  }
+  // submitDay(e) {
+  //   e.preventDefault();
+  //   const newDay = this.state.faces;
+  //   newDay.push(this.state.faces)
+  //   this.setState({ faces: newDay })
+  //   console.log("day" + faces)
+  // }
 
   addDate(e) {
-    this.setState({ date: e.target.value })
+    let todayDate = e.target.value;
+    this.setState({ date: todayDate });
   }
 
   addFace(e) {
-    this.setState({ status: e.target.value })
+    let todayFace = e.target.value;
+    this.setState({ status: todayFace });
   }
 
   addMessage(e) {
-    this.setState({ message: e.target.value })
+    let todayMessage = e.target.value;
+    this.setState({ message: todayMessage });
+  }
+
+  submitDay (e) {
+    let arrayOfFaces = this.state.faces.push(this.state.status);
+    console.log(this.state.status);
+    this.setState({ 
+      faces: [arrayOfFaces]
+    });
   }
 
   cancelButton() {
@@ -60,7 +72,6 @@ class App extends Component {
         submitDay={this.submitDay}
         addDate={this.addDate}
         addFace={this.addFace}
-        addMessage={this.addMessage}
         cancelButton={this.cancelButton}
         />
       </div>
