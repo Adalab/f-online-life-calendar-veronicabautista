@@ -14,7 +14,7 @@ class Main extends Component {
 						let smileys = face === ':)' ? 'happy__smile' : 'sad__smile' */}
 					{this.props.faces.map(function (face, i) {			
 						let myFace;
-              let smileys;
+             let smileys;
               if (face === 'happy') {
                 myFace = ':)'
                 smileys = 'happy__smile'

@@ -9,9 +9,9 @@ class App extends Component {
 
     this.state ={
       faces: [],
-      date: null,
-      status: null,
-      mesagge: null,
+      date: "",
+      status: "",
+      mesagge: "",
     }
     console.log(this.state.faces);
 
@@ -45,11 +45,10 @@ class App extends Component {
   }
 
   submitDay (e) {
-    let arrayOfFaces = this.state.faces.push(this.state.status);
     console.log(this.state.status);
-    this.setState({ 
-      faces: [arrayOfFaces]
-    });
+    this.setState(prevState => ({ 
+      faces: [...prevState.faces, this.state.status]
+    }));
   }
 
   cancelButton() {
@@ -65,7 +64,6 @@ class App extends Component {
       <div className="page__container">
         <Main 
         faces={this.state.faces}
-        status={this.state.status}
         />
         <NewDay 
         status={this.state.status}
