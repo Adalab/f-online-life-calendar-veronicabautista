@@ -27,7 +27,7 @@ class NewDay extends Component {
 			</label>
 		</div>
 		<div className="buttons__container">
-			<button type="submit" className="save__button" onClick={submitDay}>GUARDAR</button>
+			<button type="button" className="save__button" onClick={submitDay}>GUARDAR</button>
 			<button className="cancel__button" onClick={cancelButton}>CANCELAR</button>      
 		</div>
 		</form>

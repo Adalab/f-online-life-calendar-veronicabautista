@@ -45,10 +45,10 @@ class App extends Component {
   }
 
   submitDay (e) {
-    console.log(this.state.status);
+    console.log("uno",this.state.status);
     this.setState(prevState => ({ 
       faces: [...prevState.faces, this.state.status]
-    }));
+    }),()=>{console.log(this.state)});
   }
 
   cancelButton() {
